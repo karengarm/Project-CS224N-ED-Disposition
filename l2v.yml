@@ -1,0 +1,9 @@
+name: l2v
+channels:
+  - defaults
+dependencies:
+  - python=3.10
+  - jupyter
+  - pip
+  - pip:
+    - lbl2vec
