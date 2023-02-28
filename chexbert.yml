@@ -1,0 +1,17 @@
+name: chexbert11
+channels:
+  - pytorch
+  - anaconda
+  - defaults
+  - nvidia
+dependencies:
+  - pandas
+  - pip=20.*
+  - python=3.7.*
+  - pytorch
+  - pytorch-cuda=11.7
+  - scikit-learn
+  - statsmodels
+  - pip:
+    - transformers==3.0.*
+
