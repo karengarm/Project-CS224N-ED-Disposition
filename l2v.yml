@@ -5,3 +5,5 @@ dependencies:
   - pip
   - pip:
     - lbl2vec
+    - pynvml
+# conda install -c huggingface -c conda-forge datasets
