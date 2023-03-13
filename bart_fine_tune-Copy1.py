@@ -1,3 +1,8 @@
+"""
+Batch size can be increased, because we are freezing the base model and only tuning classification head
+"""
+
+
 model_dir = "/root/models/bart_frozen_base_3_12_23"
 
 
@@ -74,9 +79,6 @@ def compute_metrics(eval_pred):
     predictions = np.argmax(logits, axis=-1)
     return metric.compute(predictions=predictions, references=labels)
 
-
-
-from transformers import TrainingArguments, Trainer
 
 training_args = TrainingArguments(
     output_dir=f"{model_dir}/output",
