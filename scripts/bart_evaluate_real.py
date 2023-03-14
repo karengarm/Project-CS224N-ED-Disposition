@@ -1,3 +1,9 @@
+"""
+THIS CODE WILL OOM!
+Do not run this. Use scripts/zero_shot_all_labels_fine_tune.py instead!
+"""
+
+
 model_dir = "/root/models/bart_frozen_base_3_12_23"
 
 from pynvml import *
@@ -34,7 +40,7 @@ print_gpu_utilization()
 from transformers import AutoTokenizer
 from transformers import AutoModelForSequenceClassification
 
-tokenizer = AutoTokenizer.from_pretrained("facebook/bart-large-mnli", local_files_only=True)
+tokenizer = AutoTokenizer.from_pretrained("facebook/bart-large-mnli")
 model = AutoModelForSequenceClassification.from_pretrained(model_dir, local_files_only=True)
 print_gpu_utilization()
 
@@ -65,7 +71,7 @@ training_args = TrainingArguments(
     num_train_epochs=1,
     logging_steps=10,
     per_device_train_batch_size=3,
-    per_device_eval_batch_size=8, # TODO: adjust
+    per_device_eval_batch_size=1, # TODO: adjust
     gradient_accumulation_steps=10, # effective batch size is per_device_train_batch_size * gradient_accumulation_steps
 )
 
@@ -78,7 +84,7 @@ trainer = Trainer(
 )
 
 # for dataset, name in zip([small_val_dataset], ["zzz"]):
-for dataset, name in zip([train_tokenized, val_tokenized, test_tokenized], ["train", "val", "test"]):
+for dataset, name in zip([val_tokenized, test_tokenized, train_tokenized], ["val", "test", "train"]):
     for split in ["train", "val", "test"]:
         print(f"begin {name} {split}")
         predictions = trainer.predict(dataset[split])
