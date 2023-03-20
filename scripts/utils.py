@@ -62,7 +62,7 @@ def zero_shot_results_to_pandas(raw_predictions, labels=labels):
         explode_scores,
         remove_columns=["labels", "scores"],
     )
-    return pd.DataFrame(t)[["sequence"] + utils.labels]
+    return pd.DataFrame(t)[["sequence"] + labels]
 
 def naive_bayes(X, y):
     nb = GaussianNB()
