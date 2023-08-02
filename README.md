@@ -2,6 +2,7 @@
 ## CS224N Natural Language Processing with Deep Learning, Stanford University.
 Code for the project "Predicting Emergency Department Disposition". CS224N Natural Language Processing with Deep Learning, Stanford University.
 
+![plot](CS224N_Poster-1.PNG)
 
 ```
 mkdir ~/.aws
