@@ -2,7 +2,20 @@
 ## CS224N Natural Language Processing with Deep Learning, Stanford University.
 Code for the project "Predicting Emergency Department Disposition". CS224N Natural Language Processing with Deep Learning, Stanford University.
 
-![plot](CS224N_Poster.PNG)
+![plot](CS224N_Poster.png)
+
+In this project, we propose analyzing emergency department disposition through
+the lens of the radiology reports. Specifically, we have two objectives, conduct an
+unsupervised multi-label classification to extract medical conditions, followed by
+supervised classification to predict patients’ disposition.
+
+Several unsupervised label extraction methods were used to obtain medical conditions
+by considering CheXbert labels as a ground truth. We evaluate methods
+for supervised classification of the disposition by combining the extracted medical
+conditions and the radiology reports. Our work demonstrates superior performance
+of using a pretrained BART-MNLI model for zero-shot label extraction. We find
+that models trained using the extracted medical conditions together with medical
+annotations outperforms the other methods to predict patients’ disposition.
 
 ```
 mkdir ~/.aws
