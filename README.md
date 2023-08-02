@@ -1,4 +1,5 @@
-# Predicting Emergency Department Disposition. CS224N Natural Language Processing with Deep Learning, Stanford University.
+# Predicting Emergency Department Disposition. 
+## CS224N Natural Language Processing with Deep Learning, Stanford University.
 Code for the project "Predicting Emergency Department Disposition". CS224N Natural Language Processing with Deep Learning, Stanford University.
 
 
